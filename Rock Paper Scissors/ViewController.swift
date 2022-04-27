@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 var winCount = 0
 var lossCount = 0
+var selected = 0
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -27,6 +28,8 @@ var lossCount = 0
         rockButton.backgroundColor = UIColor.init(red: 0.69, green: 0.89, blue: 0.65, alpha: 1)
         paperButton.backgroundColor = UIColor.init(red: 1, green: 0.64, blue: 0.47, alpha: 1)
         scissorsButton.backgroundColor = UIColor.init(red: 1, green: 0.64, blue: 0.47, alpha: 1)
+        
+        selected = 1
     }
     
     @IBOutlet weak var paperButton: UIButton!
@@ -35,6 +38,8 @@ var lossCount = 0
         paperButton.backgroundColor = UIColor.init(red: 0.69, green: 0.89, blue: 0.65, alpha: 1)
         rockButton.backgroundColor = UIColor.init(red: 1, green: 0.64, blue: 0.47, alpha: 1)
         scissorsButton.backgroundColor = UIColor.init(red: 1, green: 0.64, blue: 0.47, alpha: 1)
+        
+        selected = 2
     }
     
     @IBOutlet weak var scissorsButton: UIButton!
@@ -43,6 +48,8 @@ var lossCount = 0
         scissorsButton.backgroundColor = UIColor.init(red: 0.69, green: 0.89, blue: 0.65, alpha: 1)
         paperButton.backgroundColor = UIColor.init(red: 1, green: 0.64, blue: 0.47, alpha: 1)
         rockButton.backgroundColor = UIColor.init(red: 1, green: 0.64, blue: 0.47, alpha: 1)
+        
+        selected = 3
     }
     
     @IBAction func playChosen(_ sender: Any)
@@ -51,8 +58,30 @@ var lossCount = 0
         //2 = paper
         //3 = scissors
         
+        
         var randomInt = Int.random(in:1...3)
         
+        if randomInt == 1
+        {
+            computerChose.text = "Rock"
+        }else if randomInt == 2
+        {
+            computerChose.text = "Paper"
+        }else
+        {
+            computerChose.text = "Scissors"
+        }
+        
+        if selected == 1
+        {
+            youChose.text = "Rock"
+        }else if selected == 2
+        {
+            youChose.text = "Paper"
+        }else
+        {
+            youChose.text = "Scissors"
+        }
         
     }
     
