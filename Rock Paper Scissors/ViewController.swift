@@ -47,6 +47,12 @@ var lossCount = 0
     
     @IBAction func playChosen(_ sender: Any)
     {
+        //1 = rock
+        //2 = paper
+        //3 = scissors
+        
+        var randomInt = Int.random(in:1...3)
+        
         
     }
     
