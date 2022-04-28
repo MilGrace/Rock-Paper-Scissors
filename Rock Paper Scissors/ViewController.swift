@@ -61,7 +61,7 @@ var selected = 0
         
         var randomInt = Int.random(in:1...3)
         
-        if randomInt == 1
+        if randomInt == 1 && selected != 0
         {
             computerChose.text = "Rock"
             
@@ -73,7 +73,7 @@ var selected = 0
             {
                 lossCount += 1
             }
-        }else if randomInt == 2
+        }else if randomInt == 2 && selected != 0
         {
             computerChose.text = "Paper"
             
@@ -85,7 +85,7 @@ var selected = 0
             {
                 winCount += 1
             }
-        }else
+        }else if randomInt == 3 && selected != 0
         {
             computerChose.text = "Scissors"
             
