@@ -64,12 +64,39 @@ var selected = 0
         if randomInt == 1
         {
             computerChose.text = "Rock"
+            
+            if selected == 2
+            {
+                winCount += 1
+            }
+            else if selected == 3
+            {
+                lossCount += 1
+            }
         }else if randomInt == 2
         {
             computerChose.text = "Paper"
+            
+            if selected == 1
+            {
+                lossCount += 1
+            }
+            else if selected == 3
+            {
+                winCount += 1
+            }
         }else
         {
             computerChose.text = "Scissors"
+            
+            if selected == 1
+            {
+                winCount += 1
+            }
+            else if selected == 2
+            {
+                lossCount += 1
+            }
         }
         
         if selected == 1
@@ -78,10 +105,16 @@ var selected = 0
         }else if selected == 2
         {
             youChose.text = "Paper"
-        }else
+        }else if selected == 3
         {
             youChose.text = "Scissors"
+        }else
+        {
+            youChose.text = ""
         }
+        
+        wins.text = String(winCount)
+        losses.text = String(lossCount)
         
     }
     
