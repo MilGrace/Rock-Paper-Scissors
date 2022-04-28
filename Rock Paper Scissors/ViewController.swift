@@ -20,6 +20,7 @@ var selected = 0
         scissorsButton.backgroundColor = UIColor.init(red: 1, green: 0.64, blue: 0.47, alpha: 1)
         wins.text = String(winCount)
         losses.text = String(lossCount)
+        alerts.text = ""
     }
 
     @IBOutlet weak var rockButton: UIButton!
@@ -68,10 +69,16 @@ var selected = 0
             if selected == 2
             {
                 winCount += 1
+                alerts.text = ""
             }
             else if selected == 3
             {
                 lossCount += 1
+                alerts.text = ""
+            }
+            else if selected == 1
+            {
+                alerts.text = "tie"
             }
         }else if randomInt == 2 && selected != 0
         {
@@ -80,10 +87,16 @@ var selected = 0
             if selected == 1
             {
                 lossCount += 1
+                alerts.text = ""
             }
             else if selected == 3
             {
                 winCount += 1
+                alerts.text = ""
+            }
+            else if selected == 2
+            {
+                alerts.text = "tie"
             }
         }else if randomInt == 3 && selected != 0
         {
@@ -92,10 +105,16 @@ var selected = 0
             if selected == 1
             {
                 winCount += 1
+                alerts.text = ""
             }
             else if selected == 2
             {
                 lossCount += 1
+                alerts.text = ""
+            }
+            else if selected == 3
+            {
+                alerts.text = "tie"
             }
         }
         
@@ -111,6 +130,7 @@ var selected = 0
         }else
         {
             youChose.text = ""
+            alerts.text = "Please select a move"
         }
         
         wins.text = String(winCount)
@@ -122,7 +142,7 @@ var selected = 0
     @IBOutlet weak var computerChose: UILabel!
     @IBOutlet weak var wins: UILabel!
     @IBOutlet weak var losses: UILabel!
-    
+    @IBOutlet weak var alerts: UILabel!
     
     
 }
